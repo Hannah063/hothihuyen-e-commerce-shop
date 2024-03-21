@@ -38,5 +38,37 @@ Route::get('/', function () {
         ['name' => 'Watches'],
         ['name' => 'Accessories'],
     ];
-    return view('home', ['fileNames' => $fileNames, 'nameItems' => $nameItems]);
+    $bags = [
+        [
+            'file' => 'bag3.jpeg',
+            'name' => 'Beautiful Bag',
+            'price' => '4500 Bdt',
+            'oldPrice' => '7300 Bdt'
+        ],
+        [
+            'file' => 'bag4.jpeg',
+            'name' => 'Beautiful Bag',
+            'price' => '4500 Bdt',
+            'oldPrice' => '7300 Bdt'
+        ],
+        [
+            'file' => 'bag5.jpeg',
+            'name' => 'Beautiful Bag',
+            'price' => '4500 Bdt',
+            'oldPrice' => '7300 Bdt'
+        ],
+        [
+            'file' => 'bag6.jpg',
+            'name' => 'Beautiful Bag',
+            'price' => '4500 Bdt',
+            'oldPrice' => '7300 Bdt'
+        ],
+        [
+            'file' => 'bag7.jpeg',
+            'name' => 'Beautiful Bag',
+            'price' => '4500 Bdt',
+            'oldPrice' => '7300 Bdt'
+        ],
+    ];
+    return view('home', ['fileNames' => $fileNames, 'nameItems' => $nameItems, 'bags' => $bags]);
 });

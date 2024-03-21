@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row mt-1 gap-2" style="height: 55%;">
+                <div class="row mt-1 gap-2" style="height: 35%;">
                     <div class="col-3 pt-2" style="background-color: white; margin-left: 15px; width:23%; height: 99%">
                         @foreach ($nameItems as $name)
                             <x-sub-sidebar-item>
@@ -62,16 +62,43 @@
                         @endforeach
                     </div>
                     <div class="col-6">
-                        <img src="{{asset('assets/images/sofa.jpg')}}" alt="" style="height: 46%; border: solid 1px; width: 100%; margin-bottom: 15px;" >
-                        <img src="{{asset('assets/images/bag.jpg')}}" alt="" style="height: 22%; ; : solid 1px; width: 31%; margin-right: 18px;" >
-                        <img src="{{asset('assets/images/clock.png')}}" alt="" style="height: 22%; ; border: solid 1px; width: 31%; margin-right: 18px" >
-                        <img src="{{asset('assets/images/lamp.jpg')}}" alt="" style="height: 22%; ; border: solid 1px; width:31%" >
+                        <img src="{{asset('assets/images/sofa.jpg')}}" alt="" style="height: 30%; border: solid 1px; width: 100%; margin-bottom: 15px;" >
+                        <img src="{{asset('assets/images/bag.jpg')}}" alt="" style="height: 14%; ; : solid 1px; width: 31%; margin-right: 18px;" >
+                        <img src="{{asset('assets/images/clock.png')}}" alt="" style="height: 14%; ; border: solid 1px; width: 31%; margin-right: 18px" >
+                        <img src="{{asset('assets/images/lamp.jpg')}}" alt="" style="height: 14%; ; border: solid 1px; width:31%" >
                     </div>
                     <div class="col-3" style="width:23%">
-                        huyen
+                        <h4>Recently Viewed</h4>
+                        <div class="card" style="height: 20%;">
+                            <img src="{{asset('assets/images/bag1.jpeg')}}" class="card-img-top" alt="..." style="height: 80%;">
+                            <div class="card-body">
+                              <p class="card-text">See you browsing history</p>
+                            </div>
+                        </div>
+                        <h4>Suggesions for You</h4>
+                        <div class="card" style="height: 20%;">
+                            <img src="{{asset('assets/images/bag1.jpeg')}}" class="card-img-top" alt="..." style="height: 80%;">
+                            <div class="card-body">
+                              <p class="card-text">Watch more</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr>
+                <div class="row">
+                    <h4>Deals of the Day    |   <span style="color: red">20:45:12</span> <span style="color: red">Left</span> <span style="margin-left: 850px">View all Deals</span></h4>
+                </div>
+                <div class="row gap-5">
+                    @foreach ($bags as $bag)
+                        <div class="card col-2" style="height: 250px;">
+                            <img src="{{asset('assets/images/' . $bag['file']) }}" class="card-img-top" alt="..." style="height: 70%;">
+                            <div class="card-body">
+                            <h5 class="card-text">{{ $bag['name'] }}</h5>
+                            <p>{{ $bag['price'] }}  |   <span style="text-decoration-line: line-through">{{ $bag['oldPrice'] }}</span></p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
